@@ -1,0 +1,27 @@
+{% extends 'CoderBase/main.html' %}
+{% load static %}
+
+{% block content %}
+<style>
+    body,html{
+    height: 100%;
+    margin: 0;
+    }
+    body{
+    background-image:url("{% static 'images/img.jpeg' %}");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
+</style>
+ <div id="head">
+         <p class="m"></p>
+    <h3 style="font-size:15px" >Welcome To CoderBase</h3>
+     <p class="m"></p>
+ </div>
+    <P class="we">We are learning Consortium, We offer various
+        types of teachings. Our lessons are hosted by experts in the field</P>
+    <a href="{% url 'logout_page' %}">Logout</a>
+
+{% endblock %}

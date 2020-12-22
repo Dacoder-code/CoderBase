@@ -1,0 +1,31 @@
+{% extends 'CoderBase/main.html' %}
+
+{% block content %}
+<br/>
+
+<h3 style="text-align:center;color:green">Our Courses Are Listed Below</h3>
+        <div class="card card-body">
+            <table class="table" bgcolor="orange">
+                <tr>
+                    <th>Courses</th>
+                    <th>Instructor</th>
+                    <th>Enroll Now</th>
+                </tr>
+                {% for course in course %}
+                    <tr>
+                        <td style="color:white;font-size:16px;padding:15px;">{{ course.CourseName }}</td>
+                        <td style="color:white;font-size:16px;padding:15px;">{{ course.InstructorName }}</td>
+                        <td><a style="border:1px solid blue;
+                        color:white;
+                        background-color:blue;
+                        border-radius:5px;
+                        padding:6px;"
+                               href="{% url 'enroll_page' %}">
+                            Enroll</a> </td>
+<!-- i want the button to generate each course id from the database and send them to their specified url -->
+                    </tr>
+                {% endfor %}
+
+            </table>
+        </div>
+{% endblock %}
